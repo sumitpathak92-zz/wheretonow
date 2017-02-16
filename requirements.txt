@@ -26,7 +26,6 @@ bz2file==0.98
 chardet==2.3.0
 clamd==1.0.2
 click==6.6
--e git+https://github.com/sumitpathak92/codedocu.git@0ba643f635968b0b49c52092ab8177c3350a525e#egg=codedocu-origin/development
 colorama==0.3.7
 configparser==3.5.0
 coverage==4.0.3
