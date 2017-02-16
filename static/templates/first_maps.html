@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script> 
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+    {% load static %}
+    <script src="{% static 'templates/js/app.js' %}"></script>
+    <style>
+      #map {
+        height: 100vh;
+        width: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .categories {
+            background: cadetblue;
+            padding: 5px 10px;
+      }
+      .categories:hover ~ ul {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body ng-app="myApp" ng-controller="MapAPIPlacesController">
+      
+      <div style="font-family: cursive; z-index:999; top:0px; position:absolute;">
+        <div style="position: relative; top: 71px;">
+        <div class="categories"> Categories </div>
+          <ul style="display: none; margin:0px"><li ng-repeat="category in category_list" style="margin: 2px 0;display:block; text-decoration: none; padding: 5px 10px; background: black; color: white; margin: 0 5px; width: 100px; text-align: center;">
+          <a href="#" style="color: white">[[category.category_type]]</a>
+        </li></ul>
+      </div>
+      </div>
+      <div id="map"></div>
+    <script src={% static 'templates/js/initialize_map.js' %}>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+
+      initMap();
+
+      handleLocationError(browserHasGeolocation, infoWindow, pos);
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIXsFQ0nBAWgAMnZvcAFaeiRHe-1B4P3o&callback=initMap">
+    </script>
+  </body>
+</html>

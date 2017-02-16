@@ -1,0 +1,9 @@
+{ 
+    "categories" :
+        {
+            "category_type" : [
+                            "Hotels", "Pubs/Bars/Restaurants", "Gaming Lounge", "Breweries/MicroBreweries", "Malls", 
+                            "PlayAreas", "Theatres", "Real Estate", "Educational Institutions"
+                            ]
+        }
+}
